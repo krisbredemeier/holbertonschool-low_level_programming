@@ -2,9 +2,9 @@
 void print_tebahpla(void)
 {
 	char c;
-	for( c='z'; c<='a' ; --c)
+	for( c='z'; c>='a'; --c)
 
 {
-	int print_char = (c);
+	print_char(c);
 }
 }
