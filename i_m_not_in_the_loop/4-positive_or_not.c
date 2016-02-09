@@ -1,3 +1,4 @@
+/*this file evaluates numbers is they are positive or negative*/
 #include "my_functions.h"
 void positive_or_not(int n)
 

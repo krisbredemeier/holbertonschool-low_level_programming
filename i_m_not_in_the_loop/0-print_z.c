@@ -1,3 +1,4 @@
+/*this file prints 'z'*/
 #include <unistd.h>
 #include "my_functions.h"
 
