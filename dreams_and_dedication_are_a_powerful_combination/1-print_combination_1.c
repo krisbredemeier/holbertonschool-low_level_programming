@@ -2,11 +2,8 @@
 *this function prints nubmer 0 throgh 9
 *with a comma and space to seperate
 */
-
 #include "my_functions.h"
-
 void print_combination_1(void)
-
 /*selcts numbers 0 thorugh 9*/
 {
 int n;

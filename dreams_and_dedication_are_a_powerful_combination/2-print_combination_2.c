@@ -1,13 +1,9 @@
 /*Prints two digit number combinations with no repeats*/
-
 #include "my_functions.h"
-
 void print_combination_2(void)
-
 {
 int n;
 int x;
-
 for (n=0; n<=9; n++)
 for (x=1; x<=9; x++)
 if (x>n)
@@ -16,13 +12,11 @@ if (x>n)
 	print_char(x+'0');
 if ((n==8) && (x==9))
 {
-
 }
 	else	{	
 		print_char(',');
 		print_char(' ');
 		}
 	}
-
 }
 
