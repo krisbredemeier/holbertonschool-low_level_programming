@@ -14,7 +14,7 @@ if (x>n)
 	{
 	print_char(n+'0');
 	print_char(x+'0');
-if (n!=9)
+if (n!=89)
 		{	
 		print_char(',');
 		print_char(' ');
