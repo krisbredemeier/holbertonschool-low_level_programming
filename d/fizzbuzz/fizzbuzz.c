@@ -7,7 +7,7 @@ int main()
 	{
 		printf("%d ", i);
 		if (i % 15 == 0){
-			printf("fizz-buzz ");
+			printf("fizzbuzz ");
 		} 
 		else if (i % 5 == 0) {
 			printf("buzz ");
