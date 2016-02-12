@@ -39,7 +39,6 @@ while (temp > 0)
 	temp = temp / 10;
 	digits++;
 	}
-/* 10 ** power */
 digitscopy = digits; /*store the value into copy*/
 for (power = 1; digits > 1; digits--)
 	{
@@ -48,14 +47,10 @@ for (power = 1; digits > 1; digits--)
 /*start loop */
 for (; digitscopy > 0; digitscopy--)
 	{
-	/*divide n by power */
-	singledigit = n /power;
-	/*print the digit */
-	chardigit = singledigit + '0';
+	singledigit = n /power; /*divide n by power */
+	chardigit = singledigit + '0'; /*print the digit */
 	print_char(chardigit);
-	/* subtract (power * digit) from n */
-	n = n - (power * singledigit);
-	/*end loop*/
-	power = power / 10;
+	n = n - (power * singledigit); /* subtract (power * digit) from n */
+	power = power / 10; /*end loop*/
 	}
 }
