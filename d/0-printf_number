@@ -1,0 +1,9 @@
+#include <stdio.h>
+void printf_number(int n)
+
+{
+int n;
+
+printf("n");
+return 0;
+}
