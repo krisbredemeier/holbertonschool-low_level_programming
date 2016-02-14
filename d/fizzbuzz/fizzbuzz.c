@@ -1,4 +1,4 @@
-/*this is a comment for fizzbuzz*/
+/*this is my first fizzbuzzz project*/
 #include <stdio.h>
 
 int main()
@@ -22,12 +22,3 @@ int main()
 			}
 	}
 }
-
-
-
-
-
-
-
-
-
