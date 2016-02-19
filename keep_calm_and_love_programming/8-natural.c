@@ -1,11 +1,14 @@
 #include <stdio.h>
-int main()
+#define NUMBER 1024
+int main(void)
 {
-int i, sum=0;
-	for (i=0; i<1024; i++)
-	{
-		if ((i%5==0) | (i%3==0))
-		sum=sum+1;
+int i = NUMBER;
+int total = 0;
+	while (i--) {
+		if (i%3==0 || i%5==0) {
+		total += i;
+		}
 	}
-	printf("%d\n", sum);	
+	printf("%d\n", total);
+	return 0;	
 }
