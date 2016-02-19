@@ -1,10 +1,7 @@
 /*this prints the last digit*/
 
 #include <unistd.h>
-int print_char(char c)
-{
-return (write(1, &c, 1));
-}
+#include "my_functions.h"
 void print_last_digit(int n)
 {
 int length;
