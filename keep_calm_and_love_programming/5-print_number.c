@@ -2,12 +2,7 @@
 #include "my_functions.h"
 void print_number(int n)
 {
-int digits;
-int temp;
-int power;
-int singledigit;
-char chardigit;
-int digitscopy;
+int digits; int temp; int power; int singledigit; char chardigit; int digitscopy;
 /* this takes care of 0 and negative numbers*/
 if ( n == 0 ) {
 	print_char('0');

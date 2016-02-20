@@ -2,7 +2,6 @@
 #include <stdio.h>
 #include "my_functions.h"
 void print_combination_2(void)
-
 {
 int x;
 int y;
