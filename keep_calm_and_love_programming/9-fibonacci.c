@@ -13,7 +13,9 @@ int ndx = AMOUNT;
         fib3= fib2;
         fib2 += fib1;
         fib1 = fib3;
+        if (fib2 < 100){
         printf(", %d", fib2);
+            }
         }
     printf("\n");
     }
