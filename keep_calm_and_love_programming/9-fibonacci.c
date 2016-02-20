@@ -1,3 +1,4 @@
+/*fibonacci*/
 #include <stdio.h>
 #define AMOUNT 50
 int main(void)

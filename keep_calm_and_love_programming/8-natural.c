@@ -1,3 +1,4 @@
+/*numbers*/
 #include <stdio.h>
 #define NUMBER 1024
 int main(void)
