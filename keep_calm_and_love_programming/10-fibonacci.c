@@ -13,6 +13,6 @@ int main() {
             total = total + n1;
         }
     }
-    printf( "Total: %u\n", total );
+    printf( "%u\n", total );
     return 0;
 }
