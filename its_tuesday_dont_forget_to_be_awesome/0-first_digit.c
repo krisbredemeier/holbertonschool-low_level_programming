@@ -1,5 +1,4 @@
 /*prints the first digit of a number*/
-#include <unistd.h>
 #include "my_functions.h"
 int first_digit(int n)
 {
