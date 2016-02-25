@@ -1,3 +1,4 @@
+/*prints triangle*/
 #include <stdio.h>
 #include "my_functions.h"
 void triangles_in_the_term(int h, int n)
@@ -17,6 +18,5 @@ void triangles_in_the_term(int h, int n)
 				for(c=0;c<(2*i-1) ;c++) 
 					printf("*");
 				printf("\n");
-			}
 		}
-
+}
