@@ -6,10 +6,11 @@ void triangles_in_the_term(int h, int n)
 	int i;//current row
 	int s; //spaces
 	int c; //counter (for *s)
-	int ncopy=n;
+	int ncopy=n;//makes a copy of n
 	//n=nuber of times tree repeats
 
 		for(ncopy=0; ncopy<n; ++ncopy)
+			if(h%2==0) {
 			for(i=1;i<=h;i++)
 		{
 				for(s=0;s<h-i ;s++)
@@ -18,5 +19,16 @@ void triangles_in_the_term(int h, int n)
 					printf("*");
 				printf("\n");
 			}
-		//repeate what is above 
+		}
+			else if (h%2!=0) {
+				for(i=1;i<=h;i++)
+		{
+				for(s=0;s<h-i ;s++)
+					printf(" ");
+				for(c=0;c<(2*i-1) ;c++) 
+					printf("*");
+					printf("$");
+					printf("\n");
+			}
+			} 
 }
