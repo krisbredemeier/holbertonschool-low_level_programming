@@ -1,8 +1,7 @@
+#include <limits.h>
 /*function that retruns the fist number constrained in a string*/
 int string_to_integer(char *s) {
-int x = 0;
-	int sign = 1;
-	long y = 0;
+int x = 0, sign = 1; long y = 0;
 	while (	*(s+x) != '\0' ){
 		int c = *(s+x)+0;
 		int cc = *(s+x+1)+0;
@@ -14,7 +13,7 @@ int x = 0;
 			int t = c - '0' ;
 			y =  y + t ;
 			/*takes care of smallest and largest numbers*/
-			if( (y > 2147483647 && sign == 1 ) || (y > 2147483648  && sign == -1 ) ){
+			if( (y > INT_MAX && sign == 1 ) || (y < INT_MIN  && sign == -1 ) ){
 				return 0 ;
 			}
 			/*does not print anything but numbers*/
