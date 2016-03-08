@@ -1,10 +1,12 @@
 #include <limits.h>
 /*function that retruns the fist number constrained in a string*/
+/* begins to figure out what the character is in the ascii table*/
 int string_to_integer(char *s) {
 int x = 0, sign = 1; long y = 0;
 	while (	*(s+x) != '\0' ){
 		int c = *(s+x)+0;
 		int cc = *(s+x+1)+0;
+		/*identifies negative numbers*/
 		if( c == 45  ){
 			sign *=(-1);
 		}
