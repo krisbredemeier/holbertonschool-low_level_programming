@@ -1,5 +1,4 @@
 #include "my_functions.h"
-#include <stdio.h>
 void print_string_2(char *str)
 {
   int i = 0;
