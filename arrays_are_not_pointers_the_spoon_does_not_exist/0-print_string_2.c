@@ -8,4 +8,5 @@ void print_string_2(char *str)
     print_char(str[count]);
     str+=1;
   }
+    print_char('\n');
 }
