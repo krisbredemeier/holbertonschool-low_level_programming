@@ -1,3 +1,4 @@
+/*function that prints half of a string*/
 #include "my_functions.h"
 void print_string_half(char *str)
 {
