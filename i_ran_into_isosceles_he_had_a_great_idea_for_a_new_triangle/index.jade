@@ -1,0 +1,238 @@
+
+doctype
+
+html
+
+  body
+
+    div
+      p First paragraph
+      p
+        | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ipsum velit. Nulla finibus enim sit amet nisi congue sagittis.
+        br
+        | Cras sem diam, aliquam et bibendum quis, volutpat at eros. Quisque gravida erat quis mauris cursus, sed iaculis lacus laoreet.
+      p.
+        Nulla fringilla, nibh sed placerat posuere, metus urna lacinia sapien, in <i>consectetur justo</i> ex sit amet enim. Aenean gravida mauris quis risus tempor tempor. Vivamus malesuada maximus leo, vel aliquam erat mattis lacinia. Nunc sagittis ante at condimentum euismod.
+
+
+    p(id="4th_Para",
+    class="lorem_ipsum very_import").
+      Sed tristique ipsum in pellentesque commodo. Pellentesque mi nibh, dictum non luctus et, porta non nibh. Nulla a mollis quam, sit amet feugiat urna. Phasellus enim nisi, dignissim sit amet mattis a, vestibulum in massa.
+
+
+    #2nd_div.lorem_ipsum.very_import
+      Duis nec nisl risus. Ut eleifend purus vitae orci elementum, eget ultricies sem iaculis. Suspendisse id rutrum odio. Pellentesque a ante in tortor euismod dictum ac sit amet magna. Nulla sed velit tristique, lobortis erat vitae, bibendum sapien. Aenean ac volutpat nibh. Integer et volutpat est.
+
+    //- If you are creating lists you can do this
+    ul
+      li#bbp_list_item
+        a(href='#') Barry Bonds
+      li#bbp_list_item
+        a(href='#') Hank Aaron
+      li#bbp_list_item
+        a(href='#') Babe Ruth
+
+    //- Or, you can put them on the same line with a colon
+    ul
+      li#hero_list_item: a(href="#") Batman
+      li#hero_list_item: a(href="#") Superman
+      li#hero_list_item: a(href="#") The Flash
+
+    //- ---------- INTERPOLATION ----------
+
+    //- You can execute JavaScript in a template by putting
+    //- a dash and space in front of it
+
+    - myName = "Derek";
+
+    //- You can place variables in the HTML with interpolation
+    //- Everything between #{} is used like code
+
+    p Hello #{myName}
+
+    //- So we can execute JavaScript any place
+
+    p 1234 * 5678 = #{1234 * 5678}
+
+    //- The code can be run in attributes
+
+    - website = "http://newthinktank.com"
+
+    a(href="#{website}") New Think Tank
+
+    - heroes = ['Wonder Woman', 'Super Girl', 'Bat Girl']
+
+    ul
+      li#hero_list_item: a(href="#") #{heroes[0]}
+      li#hero_list_item: a(href="#") #{heroes[1]}
+      li#hero_list_item: a(href="#") #{heroes[2]}
+
+    //- You can shorten tag names, but this normally isn't good
+
+    - bq = "blockquote"
+    #{bq} A Bad Idea
+
+    //- You can also use = when a block contains only the variable
+    //- value
+
+    - batmanData = "Batman is a superhero co-created by artist Bob Kane and writer Bill Finger and published by DC Comics. The character made his first appearance in Detective Comics #27 (May, 1939). Batman is the secret identity of Bruce Wayne."
+
+    p= batmanData
+
+    //- You can do the same with attribute values stored in an
+    //- object
+
+    - fnI = {"type": "text", "name": "fName"}
+
+    span First Name
+    input(type=fnI.type, name=fnI.name)
+
+    //- Tags are encoded for security reasons
+
+    - someInfo = "<i>Very Interesting</i>"
+
+    p= someInfo
+
+    //- To turn off encoding use !=
+
+    p!= someInfo
+
+    //- Or
+
+    p !{someInfo}
+
+    //- ---------- LOGIC OPERATORS ----------
+
+    //- You can provide different output based on if
+    //- conditions
+
+    - date = new Date()
+    - hour = date.getHours()
+
+    - if ((hour >= 6) && (hour <= 17)){
+      h3 Day Time
+    - } else {
+      h3 Night Time
+    - }
+
+    //- This can also be written using indentation
+
+    - age = 18
+
+    if ((age >= 16) && (age < 18))
+      h3 You can drive
+    else if age >= 18
+      h3 You can drive and vote
+    else
+      h3 You can wait till you're 16
+
+    //- unless comes out negative if the condition is true
+
+    unless age >= 16
+      h3 You'll drive at 16
+    else
+      h3 You can drive
+
+    //- You can also use the ternary operator
+
+    - dayTime = (((hour >= 6) && (hour <= 17)) ? 'Day Time' : 'Night Time')
+
+    h3 #{dayTime}
+
+    //- Case works like Switch
+
+    - name = "Sue"
+
+    case name
+      when "Sally"
+        h3 Hi Sally
+      when "Sue"
+        h3 Hi Sue
+      default
+        h3 Hi You
+
+    //- You can also run JS with script
+
+    script.
+      console.log('Hello Jade!')
+
+    //- ---------- LOOPING ----------
+    //- You can use for loops to cycle through data
+
+    - qbs = ['Palmer', 'Brees', 'Rivers', 'Brady']
+
+    ul
+      - for(i = 0; i < qbs.length; i++){
+          li= qbs[i]
+      - }
+
+    //- Each is used to iterate over arrays and objects
+
+    ul
+      each qb in qbs
+        li= qb
+
+    //- While loops iterate as long as the condition is true
+
+    - i = 0
+
+    ul
+      while i < 20
+        li= i
+        - i++;
+
+    //- ---------- MIXINS ----------
+
+    //- Mixins are reusable pieces of code that are basically
+    //- JS functions
+
+    mixin nflPlayer(name, pos, team)
+      li #{name} is the #{pos} for the #{team}
+
+    ul#nflPlayers
+      +nflPlayer("Tom Brady", "Quarterback", "Patriots")
+      +nflPlayer("Payton Manning", "Quarterback", "Broncos")
+
+    //- Mixins don't have to receive parameters and can
+    //- just provide output like the copyright symbol
+
+    mixin copyr
+      | &#169;
+
+    p
+      +copyr
+      |  2016
+
+    //- You can receive a variable number of arguments
+    //- by turning the arguments object into an array
+
+    mixin makeList()
+      ul
+        - args = Array.prototype.slice.call(arguments);
+        for item in args
+          li= item
+
+    +makeList("Dog", "Cat", "Fish")
+
+    //- ---------- EXTEND ----------
+
+    //- extend allows us to replace blocks in a template
+
+    extends extendex
+    block header
+      h3 The Title
+    block content
+      p
+        | Nulla fringilla, nibh sed placerat posuere, metus urna lacinia sapien, in consectetur justo ex sit amet enim. Aenean gravida mauris quis risus tempor tempor. Vivamus malesuada maximus leo, vel aliquam erat mattis lacinia. Nunc sagittis ante at condimentum euismod.
+
+    //- We can append to what is there
+
+    block append content2
+      p
+        | Appended data
+
+    //- We can prepend to what is there
+
+    block prepend content3
+      p
+        | I come first
