@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <unistd.h>
 
 void print_number ( int i);
 void print_positive( int i);
@@ -72,4 +73,9 @@ int  number_digits (int i)
 	    c++;
 	}
 	return (c);
+}
+
+int print_char(char c)
+{
+  return (write(1, &c, 1));
 }
