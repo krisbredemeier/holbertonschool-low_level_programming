@@ -3,7 +3,7 @@
 char *cap_string(char *n)
   {
       int i;
-      for(i=0; i != ' '; i++)
+      for(i=0; i != 'E'; i++)
       {
           if ((n[i-1]==' ' && n[i]>='a' && n[i]<='z'))
           n[i] = (n[i] -32);
