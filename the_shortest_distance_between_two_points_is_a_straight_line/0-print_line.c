@@ -9,15 +9,3 @@ void print_line(int n)
       print_char('\n'); {
       }
     }
-
-
-
-
-
-  /*
-for(int i=0; i<n; i++){
-  print_char('_');
-  print_char('\n');
-  }
-}
-*/
