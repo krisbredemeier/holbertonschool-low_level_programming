@@ -1,5 +1,5 @@
-char *string_ncopy(char *dest, const char *src, int n);
-char *
+/*copy string with ncopy*/
+char*
 string_ncopy(char *s1, const char *s2, int n)
 {
     char *s = s1;
