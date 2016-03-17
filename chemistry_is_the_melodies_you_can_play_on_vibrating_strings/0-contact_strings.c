@@ -1,4 +1,4 @@
-
+/*prints hello world*/
 char *concat_strings(char *dest, const char *src){
  int i=0, j;
  while (dest[i]!='\0'){
