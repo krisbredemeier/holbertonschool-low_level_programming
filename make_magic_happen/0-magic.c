@@ -1,3 +1,4 @@
+/*prints 98*/
 #include <stdio.h>
 
 int main(void) {
