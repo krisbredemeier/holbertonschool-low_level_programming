@@ -1,3 +1,4 @@
+//finds squre root of number
 int calculate_sqrt(int n, int r, int i);
 
 int square_root(int n)

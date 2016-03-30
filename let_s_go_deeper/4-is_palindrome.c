@@ -1,3 +1,4 @@
+//these functions find out if a string is a palindrome
 int string_length(char *s, int i);
 int compare_strings(char *s, int i, int j);
 int is_palindrome(char *s) {

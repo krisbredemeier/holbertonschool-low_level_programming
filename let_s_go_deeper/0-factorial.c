@@ -1,3 +1,4 @@
+//finds factorial of number passsed in
 #include "my_functions.h"
 int factorial(int n)
 {
