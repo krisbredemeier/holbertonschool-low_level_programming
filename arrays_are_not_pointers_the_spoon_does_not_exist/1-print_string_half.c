@@ -1,14 +1,12 @@
 /*function that prints half of a string*/
 #include "my_functions.h"
-void print_string_half(char *str)
-{
-  int i =0;
-  while (str[i] != '\0')
-  i++;
-  int n = i - (i/2);
-  str+=n;
-  for (int count=0; count < i/2; count++) {
-    print_char(*(str));
-    str+=1;
+int print_char(char c);
+
+void print_string_half(char *str) {
+  int i;
+
+  for (i = 0; *str++; i++) {}
+  for (i /= -2, str--; i; i++) {
+    print_char(str[i]);
   }
 }
