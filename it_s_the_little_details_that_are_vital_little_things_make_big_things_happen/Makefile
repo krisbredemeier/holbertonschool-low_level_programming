@@ -2,16 +2,14 @@
 
 CC = gcc -c
 CFLAGS = -Wall -Wextra -Werror -pedantic
-FILES = main.o absolute.o cap_string.o contact_strings.o first_digit.o is_prime_number.o lowercase.o nconcat_strings.o positive_or_not.o power.o print_array.o print_number.o print_string.o reverse_array.o reverse_string.o square_root.o str_len.o string_copy.o string_ncopy.o string_to_integer.o strings_compare.o swap_int.o uppercase_string.o uppercase.o
+FILES = absolute.o cap_string.o contact_strings.o first_digit.o is_prime_number.o lowercase.o nconcat_strings.o positive_or_not.o power.o print_array.o print_number.o print_string.o reverse_array.o reverse_string.o square_root.o str_len.o string_copy.o string_ncopy.o string_to_integer.o strings_compare.o swap_int.o uppercase_string.o uppercase.o
 OUT_EXE = libholberton.a
 
 
 
 all: $(FILES)
-	gcc -o libholberton.a $^ $(CFLAGS)
+	ar -rc libholberton.a $(FILES)
 
-main.o: src/main.c
-	$(CC) $(CFLAGS) src/main.c
 
 absolute.o: src/absolute.c
 	$(CC) $(CFLAGS) src/absolute.c
@@ -83,6 +81,6 @@ uppercase.o: src/uppercase.c
 	$(CC) $(CFLAGS) src/uppercase.c
 
 clean:
-	rm -f main.o absolute.o cap_string.o contact_strings.o first_digit.o is_prime_number.o lowercase.o nconcat_strings.o positive_or_not.o power.o print_array.o print_number.o print_string.o reverse_array.o reverse_string.o square_root.o str_len.o string_copy.o string_ncopy.o string_to_integer.o strings_compare.o swap_int.o uppercase_string.o uppercase.o test
+	rm -f absolute.o cap_string.o contact_strings.o first_digit.o is_prime_number.o lowercase.o nconcat_strings.o positive_or_not.o power.o print_array.o print_number.o print_string.o reverse_array.o reverse_string.o square_root.o str_len.o string_copy.o string_ncopy.o string_to_integer.o strings_compare.o swap_int.o uppercase_string.o uppercase.o test
 
 re: clean all
