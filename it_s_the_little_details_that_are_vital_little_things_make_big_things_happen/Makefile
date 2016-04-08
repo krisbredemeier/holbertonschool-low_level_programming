@@ -8,7 +8,6 @@ FILES = absolute.o cap_string.o contact_strings.o first_digit.o is_prime_number.
 
 all: $(FILES)
 	ar -rc libholbertonschool.a $(FILES)
-	ranlib libholbertonschool.a
 
 
 absolute.o: src/absolute.c
