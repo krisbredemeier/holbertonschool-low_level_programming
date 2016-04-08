@@ -3,12 +3,12 @@
 CC = gcc -c
 CFLAGS = -Wall -Wextra -Werror -pedantic
 FILES = absolute.o cap_string.o contact_strings.o first_digit.o is_prime_number.o lowercase.o nconcat_strings.o positive_or_not.o power.o print_array.o print_number.o print_string.o reverse_array.o reverse_string.o square_root.o str_len.o string_copy.o string_ncopy.o string_to_integer.o strings_compare.o swap_int.o uppercase_string.o uppercase.o
-OUT_EXE = libholberton.a
 
 
 
 all: $(FILES)
-	ar -rc libholberton.a $(FILES)
+	ar -rc libholbertonschool.a $(FILES)
+	ranlib libholbertonschool.a
 
 
 absolute.o: src/absolute.c
