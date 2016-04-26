@@ -1,3 +1,4 @@
+/*adds two elements of array*/
 int print_char(char c);
 
 int main(void)
