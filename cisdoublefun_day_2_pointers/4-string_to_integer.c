@@ -13,7 +13,7 @@ int string_to_integer(char *s)
   sign=1;
   y=0;
 
-    while(*(s+x) != '\0')
+    while (*(s+x) != '\0')
       {
         c = *(s+x)+0;
         cc = *(s+x+1)+0;
