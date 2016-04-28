@@ -1,25 +1,31 @@
 /*prints all possible combinations of three different digits*/
 int print_char(char c);
+void print_number ( int i);
 
 void print_combination_3(void)
 {
-int n;
-int x;
-int y;
-for (n=0; n<=9; n++)
-for (x=0; x<=9; x++)
-for (y=0; y<=9; y++)
-if ((y>x) && (x>n))
-	{
-	print_char(n+'0');
-	print_char(x+'0');
-	print_char(y+'0');
-if ((n==7) && (x==8) && (y==9))
-{
+  int i;
+  int j;
+  int k;
+
+  for(i=0;i<8;i++)
+  {
+    for(j = i+1; j<9; j++)
+    {
+      for(k = j+1; k<10; k++)
+      {
+        if(i==7 && j==8 && k==9)
+        {
+          print_number(789);
+        }
+        else {
+          print_number(i);
+          print_number(j);
+          print_number(k);
+          print_char(',');
+          print_char(' ');
+        }
+      }
+    }
+  }
 }
-	else	{
-		print_char(',');
-		print_char(' ');
-		}
-	}
-} 
