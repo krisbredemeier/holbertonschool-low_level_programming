@@ -19,7 +19,7 @@ void sort_array(int *a, int n)
         a[j] = temp;
       }
     }
-    while (i<n)
+    for (i=0;i<n;i++)
     {
       print_char(a[i]);
     }
