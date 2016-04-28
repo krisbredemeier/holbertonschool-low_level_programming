@@ -7,7 +7,7 @@ char *rev_string(char *str)
   int j;
   int temp;
 
-  i = 0;
+
   j = string_length(str) -1;
 
   while (i<j)

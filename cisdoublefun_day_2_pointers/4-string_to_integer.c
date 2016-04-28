@@ -17,7 +17,7 @@ int string_to_integer(char *s)
       {
         c = *(s+x)+0;
         cc = *(s+x+1)+0;
-        if(c==45)
+        if(c == 45)
         {
           sign *=(-1);
         }
@@ -25,17 +25,20 @@ int string_to_integer(char *s)
           {
             t = c - '0';
             y = y+t;
-            if((y>INT_MAX && sign == 1) || (y<INT_MIN && sign == -1))
+
+            if((y > INT_MAX && sign == 1) || (y < INT_MIN && sign == -1))
             {
               return 0;
             }
-            if(cc <47 || cc > 58)
+
+            if(cc < 47 || cc > 58)
             {
               break;
             }
-            y*=10;
+
+            y *= 10;
           }
-          x+=1;
+          x += 1 ;
         }
-        return y*sign;
+        return y *sign;
 }
