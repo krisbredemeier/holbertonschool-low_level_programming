@@ -5,13 +5,17 @@ int power(int x, int y)
   int long sum;
 
   sum = 1;
-  i = 1;
+  i = 0;
 
   if (y == 0)
   {
     return 1;
   }
   if (y < 0)
+  {
+    return -1;
+  }
+  else if (x < 0)
   {
     return -1;
   }
