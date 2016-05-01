@@ -10,6 +10,10 @@ int power(int x, int y)
   {
     return -1;
   }
+  else if (x < 0)
+  {
+    return -1;
+  }
 
 
   temp = power(x, y/2);
