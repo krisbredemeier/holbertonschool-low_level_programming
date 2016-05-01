@@ -1,3 +1,4 @@
+/*i've got the power*/
 int power(int x, int y)
 {
   int temp;

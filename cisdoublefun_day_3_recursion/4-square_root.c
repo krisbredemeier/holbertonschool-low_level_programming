@@ -1,3 +1,4 @@
+/*finds natural square root*/
 int square_root(int number)
 {
   int x;

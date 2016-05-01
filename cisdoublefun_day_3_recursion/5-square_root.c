@@ -1,23 +1,20 @@
+/*find the natural square root*/
 int find_it (int, int);
 
 int square_root(int n)
 {
-  int i;
-  int temp;
-
-  temp = 0;
-  i = 0;
-
-  temp = find_it(n, i);
-  return (temp);
+  return(find_it(n, 0));
 }
 
 int find_it (int n, int i)
 {
-  i = 0;
-  if (n == 1)
+  if (i * i > n || n < 0)
   {
-    return (1);
+    return(-1);
   }
-  return (n);
+  if (i * i == n)
+  {
+    return(i);
+  }
+  return(find_it(n, i+1));
 }
