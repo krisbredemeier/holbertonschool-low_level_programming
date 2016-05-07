@@ -9,7 +9,6 @@ char *string_dup(char *str);
 struct String *string_to_struct(char *sss)
 {
   struct String *s;
-
   s = malloc(sizeof(struct String));
   if (s == NULL)
   {
@@ -34,7 +33,7 @@ char *string_dup(char *str)
 {
   char *s2;
   int i = 0;
-  s2 = malloc(sizeof(char)*str_len(str));
+  s2 = malloc(sizeof(char)*str_len(str)+1);
   if(s2 == NULL)
     {
       return NULL;
@@ -43,5 +42,6 @@ char *string_dup(char *str)
       s2[i] = *(str+i);
       i+=1;
     }
+  s2[i] = '\0';
   return s2;
 }
