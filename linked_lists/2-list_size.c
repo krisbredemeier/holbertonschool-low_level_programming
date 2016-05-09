@@ -1,3 +1,4 @@
+/*function that returns the number of node in a list*/
 #include <stdlib.h>
 #include "list.h"
 
