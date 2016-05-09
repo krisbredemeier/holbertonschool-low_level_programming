@@ -1,4 +1,4 @@
-
+/*function that removes and frees a node from a list at a specific index*/
 #include <stdlib.h>
 #include "list.h"
 #include<stdio.h>
