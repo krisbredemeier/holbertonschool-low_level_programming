@@ -6,7 +6,7 @@ int str_len(char *str);
 char *string_dup(char *str);
 int add_node(List **list, char *content);
 
-List *perams(int ac, char **av)
+List *params(int ac, char **av)
 {
   List *list;
   int i;
