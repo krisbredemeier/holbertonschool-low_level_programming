@@ -5,6 +5,7 @@
 int str_len(char *str);
 char *string_dup(char *str);
 
+/* function that allocates a new node and links it to the to a list*/
 int add_node(List **list, char *content)
 {
   List *node;
