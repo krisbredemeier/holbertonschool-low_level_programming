@@ -1,3 +1,4 @@
+/*function that reverses the order of the nodes in the list*/
 #include <stdlib.h>
 #include "list.h"
 
