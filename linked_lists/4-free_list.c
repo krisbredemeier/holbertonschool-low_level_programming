@@ -1,3 +1,4 @@
+/*function that frees a list*/
 #include <stdlib.h>
 #include "list.h"
 
