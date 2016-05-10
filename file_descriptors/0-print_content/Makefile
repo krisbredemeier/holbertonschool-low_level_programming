@@ -1,13 +1,15 @@
-CC = gcc -c
+CC = gcc
 CFLAGS = -Wall -Wextra -Werror -pedantic
 FILES = 0-print_content.o
+TARGET = 0-print_content
+SOURCES = 0-print_content.c
 
-all: 0-print_content
+all: $(TARGET)
 
-0-print_content: 0-print_content.c
-	$(CC) $(CFLAGS) 0-print_content.c -o 0-print_content
+0-print_content: $(SOURCES)
+	$(CC) $(CFLAGS) $(SOURCES) -o $(TARGET)
 
 clean:
-	rm -f 0-print_content.o 0-print_content
+	rm -f $(FILES) $(TARGET)
 
 re: clean all
