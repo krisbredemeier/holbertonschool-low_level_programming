@@ -1,3 +1,4 @@
+/*program that prints the permissions of a file*/
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <unistd.h>
