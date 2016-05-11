@@ -1,3 +1,4 @@
+/*program that copies the content of a file into another file8?
 #include <sys/types.h>
 #include <fcntl.h>
 #include <stdio.h>
