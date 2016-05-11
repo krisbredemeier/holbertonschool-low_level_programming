@@ -1,3 +1,4 @@
+/*program that reproduces the behaviour of the cat command*/
 #include <fcntl.h>
 #include <unistd.h>
 #include <sys/types.h>
