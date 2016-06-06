@@ -2,7 +2,6 @@ CC = gcc
 CFLAGS = -Werror -Wextra -Wall -pedantic
 SRC = printf.c
 OBJ = $(SRC:.c=.o)
-DEPS = myfunctions.h
 NAME = libprintf.a
 RM = rm -f
 
