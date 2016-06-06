@@ -1,5 +1,7 @@
-#include "myfunctions.h"
+#include <unistd.h>
 #include <stdarg.h>
+
+int print_char(char);
 
 int	my_printf(const char *format, ...)
 {
@@ -15,4 +17,9 @@ int	my_printf(const char *format, ...)
     }
   va_end(arg);
   return a;
+}
+
+int print_char(char c)
+{
+   return (write(1, &c, 1));
 }
