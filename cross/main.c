@@ -15,26 +15,30 @@ int main(int argc,char **argv)
 
   rows = 0;
   cols = 0;
+  n = string_to_int(argv[1]);
+  middle = (n + 1)/2;
 
   /* check to make sure the user enters a number */
   if (argc < 2) {
     return (1);
-  }
+    }
+  if (n%2 != 0) {
+      x = 1;
+    }
+  else {
+      x = 0;
+    }
 
-  n = string_to_int(argv[1]);
-  if (n%2 == 1) {x = 1;}
-  else {x = 0;}
-  middle = (n + 1)/2;
-  for (rows=1; rows <= n; rows++)
+  for (rows = 1; rows <= n; rows++)
   {
-    for(cols = 0; cols <=n; cols++)
+    for (cols = 0; cols <=n; cols++)
     {
-      if (rows == 1 && rows == cols && cols == middle)
+      if (x == 1 && rows == cols && cols == middle)
       {
         print_char('X');
       } else if (cols == rows) {
         print_char('\\');
-      } else if (cols == n-rows) {
+      } else if (cols+rows == n+1) {
         print_char('/');
       } else {
         print_char(' ');
