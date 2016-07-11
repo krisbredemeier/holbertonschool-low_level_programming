@@ -10,36 +10,18 @@ void ht_free(HashTable *hashtable)
   unsigned int i;
   List *tmp;
   tmp = NULL;
-    i = 0;
 
-  for (i; i < hashtable->size; i++)
+  for (i = 0; i < hashtable->size; i++)
   {
     while (hashtable->array[i] != NULL)
     {
-      free (hasht->array[i]->key);
-      free (hasht->array[i]->value);
+      free (hashtable->array[i]->key);
+      free (hashtable->array[i]->value);
       tmp = hashtable->array[i]->next;
       free (hashtable->array[i]);
       hashtable->array[i]=tmp;
     }
     free(hashtable->array);
     free(hashtable);
-  }
-
-
-
-
-  if (hashtable == NULL)
-  {
-    return;
-  }
-  while (i < size)
-  {
-    if (hashtable[i])
-    {
-      free(hashtable[i]);
-      hashtable[i] = NULL;
-    }
-    i++;
   }
 }
