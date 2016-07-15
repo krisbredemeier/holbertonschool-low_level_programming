@@ -12,5 +12,4 @@ for (i=1;i<=n;i++) {
   print_char('\\');
   print_char('\n');
   }
-
 }

@@ -2,14 +2,17 @@
 #include "hashtable.h"
 #include <stdlib.h>
 #include <stdio.h>
+
 HashTable *ht_create(unsigned int size)
 {
   HashTable *new_table;
   unsigned int i;
+  
   if (size < 1)
   {
     return NULL;
   }
+  /* create space in memory for new node */
   new_table = malloc(sizeof(HashTable));
   if (new_table == NULL)
   {
@@ -26,5 +29,4 @@ HashTable *ht_create(unsigned int size)
   }
   new_table->size = size;
   return new_table;
-
 }

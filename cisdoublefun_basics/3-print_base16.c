@@ -4,8 +4,9 @@ int print_char(char c);
 void print_base16(void)
 {
   char i;
-  i='0';
   int c;
+
+  i='0';
   c=65;
 
   while (i>='0' && i<='9')

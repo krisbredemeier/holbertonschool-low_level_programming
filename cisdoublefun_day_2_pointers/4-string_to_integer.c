@@ -2,43 +2,34 @@
 #include <limits.h>
 int string_to_integer(char *s)
 {
-  int x;
-  int c;
-  int cc;
-  int t;
+  int i;
   int sign;
-  int long y;
+  int long number;
+  int temp;
 
-  x=0;
+  i=0;
   sign=1;
-  y=0;
+  number = 0;
 
-    while (*(s+x) != '\0')
+    while (s[i] != '\0' && (s[i]< '0' || s[i]>'9'))
       {
-        c = *(s+x)+0;
-        cc = *(s+x+1)+0;
-        if(c == 45)
+        if(s[i] == '-')
         {
-          sign *=(-1);
+          sign *=-1;
         }
-          if(c > 47 && c < 58)
-          {
-            t = c - '0';
-            y = y+t;
-
-            if((y > INT_MAX && sign == 1) || (y < INT_MIN && sign == -1))
+        i++;
+      }
+      while (s[i] != '\0' && (s[i] >= '0'&& s[i]<= '9'))
+        {
+          number *= 10;
+          temp = s[i] - '0';
+          number += temp;
+          i++;
+        }
+        if((number > INT_MAX && sign == 1) ||
+        (sign == -1 && (-1 * number < INT_MIN) ))
             {
               return 0;
             }
-
-            if(cc < 47 || cc > 58)
-            {
-              break;
-            }
-
-            y *= 10;
-          }
-          x += 1 ;
-        }
-        return y *sign;
-}
+      return number * sign;
+  }

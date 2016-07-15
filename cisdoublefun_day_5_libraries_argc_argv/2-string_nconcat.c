@@ -1,6 +1,9 @@
 /*nconcat string*/
 
 char *string_nconcat(char *dest, const char *src, int n)
+
+
+
 {
   char *temp;
   int i;

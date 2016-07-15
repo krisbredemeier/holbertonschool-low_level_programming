@@ -37,7 +37,7 @@ int main(int argc,char **argv)
       {
         print_char('X');
       } else if (cols == rows) {
-        print_char('\\');
+        print_char('\\'); /* make sure to escape special character */
       } else if (cols+rows == n+1) {
         print_char('/');
       } else {
@@ -60,7 +60,7 @@ int string_to_int_n(char *str, int n)
   int place = 1;
   int ret = 0;
   int i = n -1;
-  for (; i >=0; i--, place *=10)
+  for (; i >=0; i--, place *= 10)
   {
     int c = str[i];
     switch (c)

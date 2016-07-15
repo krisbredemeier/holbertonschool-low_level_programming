@@ -1,3 +1,4 @@
+/*reverse string*/
 char *rev_string(char *str);
 int string_length(char *str);
 

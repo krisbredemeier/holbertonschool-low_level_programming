@@ -1,46 +1,67 @@
-int str_len(char *s);
-char *string_copy(char *dest, const char *src);
+/*compares two strings to see if there is a needle in the haystack*/
+#include <stdio.h>
+int string_lenght(const char *s);
 
-string_string(const char *haystack, const char *needle)
+char string_string(const char *haystack, const char *needle)
 {
-  char c;
-  size_t len;
+  int hay;
+  int need;
+  int s;
+  int i;
+  int j;
 
-  c = *needle++;
-  if(!c)
-    return (char *) haystack;
-
-    len = str_len(needle);
-    do {
-      char sc;
-        do {
-          sc = *haystack++;
-          if(!sc)
-            return (char *) 0;
+  j = 0;
+  i = 0;
+  hay= string_length(haystack);
+  need = string_length(needle);
+  while (i < hay)
+  {
+    if (haystack[i] == needle[0])
+    {
+      s = i;
+      while (haystack[i] == needle[j] && i < hay)
+      {
+        if (j == need)
+        {
+          return subb(s, haystack);
         }
-        while (sc != c);
+        i++;
+        j++;
+      }
+      i = s;
+      j = 0;
     }
-    while string_copy(haystack, needle, len) != 0;
-    return (char *)(haystack - 1);
+    i++;
+  }
+  return 0;
 }
 
-int str_len(char *s)
+char *subb(int s, const char *src)
+{
+  char *sub;
+  int i;
+  int j;
+
+  i = s;
+  j = 0;
+  while (src[i] != '\0')
+  {
+    sub[j] = src[i];
+    i++;
+    j++;
+  }
+  sub[j] ='\0';
+  return sub;
+}
+
+int string_lenght(const char *s)
 {
   int i;
 
-  i=0;
-
-  while (s[i] != '\0')
+  i = 0;
+  while(s[i] != '\0')
   {
     i++;
   }
-  return(i);
-}
-
-char *string_copy(char *dest, const char *src)
-{
-  char *s = dest;
-  while ((*s++ = *src++) != 0)
-  ;
-  return (dest);
+  return i;
 }

@@ -1,4 +1,5 @@
  #include <unistd.h>
+ #include "str_struct.h"
 /*function that prints the content of a struct String*/
 int print_char(char c);
 void print_number(int n);
