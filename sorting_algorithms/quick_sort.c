@@ -1,3 +1,7 @@
+/*
+ * function that sort an array on integers in ascending order
+ * using a Quick sort
+ */
 void quick_sort(int *array, int size)
 {
   int pivot;
