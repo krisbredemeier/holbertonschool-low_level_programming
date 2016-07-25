@@ -39,7 +39,7 @@ int btree_depth(BTree *tree);
   * @tree
   *
   * the main body of the function
-  * but depends on recursive fucnction
+  * but depends on recursive fucnctiong
   */
  int btree_depth(BTree *tree)
  {

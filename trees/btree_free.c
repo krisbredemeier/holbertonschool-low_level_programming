@@ -6,6 +6,7 @@
  * btree_free - function that free a binary tree
  * @tree
  *
+ * this function frees the binary tree - it's pretty simple!
  */
 
 void btree_free(BTree *tree)

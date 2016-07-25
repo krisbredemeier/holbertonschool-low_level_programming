@@ -6,6 +6,12 @@
  * btree_insert - unction that insert a node in a binary tree
  * @tree: pointer to pointer
  * @data: str cointained in new node
+ *
+ * To compare elements value, you are allowed to use the function strcmp
+ * You must store a copy of the data parameter in the new node.
+ * You are allowed to use the function strdup
+ * If anything goes wrong, your function must return 1.
+ * Otherwise, it must return 0
  */
 
 int traverse(BTree *, BTree *);
