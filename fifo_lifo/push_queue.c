@@ -11,13 +11,21 @@
  * You must store a copy of the string passed
  *  as a parameter in the new element of the Queue
  * You are allowed to use strdup
+ *
+ * step 1: check if queue is full
+ * step 2: if queue is not full, increment rear pointer to point
+ *  to point next empty space
+ * step 3: add data element to the queue location, where rear is pointing
+ * step 4: return success
+ *
  */
 
 int push_queue(Queue **head, char *str)
 {
   Queue *tmp = queue;
 
-  if (tmp == NULL){
+  if (tmp == NULL)
+  {
     tmp = (Queue *)malloc(sizeof(Queue));
     *head = tmp;
   }

@@ -11,6 +11,12 @@
  * You must store a copy of the string passed
  *  as a parameter in the new element of the Queue
  * You are allowed to use strdup
+ *
+ * step 1: check if stack is full
+ * step 2: if stack is not full, increment top to point next epty space
+ * step 3: add data elemnt to the stack location, where top is pointing
+ * step 4: return scuccess
+ *
  */
 
 int push_stack(Stack **top, char *str)
