@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-int recursive_insert(NTree *tree, List *list, NTree *this_node, char **parents, char *data, int insert);
+NTree *find_node(NTree *, char **);
 
 /**
  * ntree_insert - function that insert a node in a N-ary tree
@@ -36,68 +36,46 @@ int recursive_insert(NTree *tree, List *list, NTree *this_node, char **parents, 
 
 int ntree_insert(NTree **tree, char **parents, char *data)
 {
-  NTree *this_node;
   NTree *that_node;
-  int insert;
-  List *list;
+  List *ptr;
 
-  that_node = NULL;
-
-  this_node = malloc(sizeof(NTree));
-  if (this_node == NULL) /*if root node is empty create it */
-  {
-    return 1;
-  }
-  this_node->str = strdup(data);
-  this_node->children = NULL;
   if (*tree == NULL)
   {
-    *tree = this_node;
-  }
-  else
-  {
-    list = malloc(sizeof(List));
-    if (list == NULL)
+    *tree = (NTree *) malloc(sizeof(NTree));
+    if (*tree == NULL)
     {
       return 1;
     }
-    list->next = NULL;
-    list->node = that_node;
-    insert = 0;
-    this_node = *tree;
-    return recursive_insert(*tree, list, this_node, parents, data, insert+1);
+    (*tree)->str = strdup(data);
+    (*tree)->children = NULL;
+    return 0;
+  }
+  else
+  {
+    that_node = find_node(*tree, parents);
+    ptr = that_node->children;
+    that_node->children = (List *) malloc(sizeof(List));
+    that_node->children->next = ptr;
+    that_node->children->node = (NTree *) malloc(sizeof(NTree));
+    that_node->children->node->str = strdup(data);
+    that_node->children->node->children = NULL;
   }
   return 0;
 }
 
-int recursive_insert(NTree *tree, List *list, NTree *this_node, char **parents, char *data, int insert)
+NTree *find_node(NTree *tree, char **parents)
 {
-  List *this_list;
-  int compare;
+  List *ptr;
+  int i;
 
-
-  this_list = this_node->children;
-  if (this_node == NULL)
+  for (i = 1; parents[i] != NULL; i++)
   {
-    this_node->children = list;
-    return 0;
-  }
-  if (this_node != NULL && parents[insert] == NULL)
-  {
-    list->next = this_list;
-    this_node->children = list;
-    return 0;
-  }
-  while (this_list != NULL)
-  {
-    this_node = this_list->node;
-    compare = strcmp(this_node->str, parents[insert]);
-    if (compare == 0)
+    ptr = tree->children;
+    while (strcmp(ptr->node->str, parents[i]) != 0)
     {
-      insert = insert + 1;
-      return recursive_insert(tree, list, this_node, parents, data, insert);
+      ptr = ptr->next;
     }
-    this_list = this_list->next;
+    tree = ptr->node;
   }
-  return 0;
+  return tree;
 }
