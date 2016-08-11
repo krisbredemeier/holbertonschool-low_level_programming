@@ -75,7 +75,7 @@ int recursive_insert(NTree *tree, List *list, NTree *this_node, char **parents, 
   List *this_list;
   int compare;
 
-  this_list = NULL;
+
   this_list = this_node->children;
   if (this_node == NULL)
   {
