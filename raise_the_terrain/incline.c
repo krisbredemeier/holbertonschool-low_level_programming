@@ -1,3 +1,6 @@
+#include <stdio.h>
+// #include <SDL2/SDL.h>
+
 int init_instance(SDL_Instance *instance)
 {
   /*Initalize SDL */
@@ -21,7 +24,7 @@ instance->renderer = SDL_CreateRenderer(instance->window, -1,
 if (instance->renderer == NULL)
   {
     SDL_DestroyWindow(instance->window);
-    fprintf(stderr, "SDL_CreateRenderer Error: %s\n", SDL_GetError());
+    fprintf(stderr, "SDL_CreateRenderer Error: %d\n", SDL_GetError());
     SDL_Quit();
     return (1);
   }
