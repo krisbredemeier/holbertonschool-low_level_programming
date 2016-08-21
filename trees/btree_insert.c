@@ -14,6 +14,7 @@
  * Otherwise, it must return 0
  */
 
+
 int traverse(BTree *, BTree *);
 
 int btree_insert(BTree **tree, char *data)
@@ -26,9 +27,11 @@ int btree_insert(BTree **tree, char *data)
   node = malloc(sizeof(BTree)); /*always allocate memory for new node */
   if (node == NULL)
     return 1;
-  node->str = strdup(data);
+  node->str = strdup(data); /* data is duplicated into str */
+  /* check to see if node is empty */
   if (node->str == NULL)
     return 1;
+  /* initiate children as NULL */
   node->left = NULL;
   node->right = NULL;
   if (*tree == NULL)
@@ -48,6 +51,7 @@ int btree_insert(BTree **tree, char *data)
  * @tmp: pointer to first node
  * @node: pointer to insersed node
  */
+
 int traverse(BTree *tmp, BTree *node)
 {
   int diff;
