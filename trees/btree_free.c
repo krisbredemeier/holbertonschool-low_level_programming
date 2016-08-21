@@ -4,9 +4,10 @@
 
 /**
  * btree_free - function that free a binary tree
- * @tree
+ * @tree - binary tree
  *
  * this function frees the binary tree - it's pretty simple!
+ * first free the children, then free the tree
  */
 
 void btree_free(BTree *tree)
