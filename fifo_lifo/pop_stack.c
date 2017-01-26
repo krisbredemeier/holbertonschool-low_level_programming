@@ -12,9 +12,9 @@
  *
  * step 1: check if stack is empty
  * step 2: if stack is not empty, access the data
-  element at which top is pointing
+*   element at which top is pointing
  * step 3: decresase the value of top by 1
- * step 4: return scuccess 
+ * step 4: return scuccess
  *
  */
 

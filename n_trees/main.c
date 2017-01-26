@@ -1,9 +1,10 @@
 #include <stdlib.h>
+#include <stdio.h>
 #include "tree.h"
 
-int ntree_insert(NTree **, char **, char *);
+int path_exists(NTree *, char **);
 
-void ntree_print(NTree *);
+int ntree_insert(NTree **, char **, char *);
 void ntree_free(NTree *);
 char **string_split(const char *, char);
 void free_str_array(char **);
@@ -15,27 +16,6 @@ int main(void)
 
     tree = NULL;
     ntree_insert(&tree, NULL, "/");
-
-    ntree_insert(&tree, (array = string_split("/", ' ')), "tmp");
-    free_str_array(array);
-    ntree_insert(&tree, (array = string_split("/ tmp", ' ')), "tmp_file");
-    free_str_array(array);
-    ntree_insert(&tree, (array = string_split("/ tmp", ' ')), "tmp_file2");
-    free_str_array(array);
-    ntree_insert(&tree, (array = string_split("/ tmp", ' ')), "tmp_file3");
-    free_str_array(array);
-
-    ntree_insert(&tree, (array = string_split("/", ',')), "mnt");
-    free_str_array(array);
-    ntree_insert(&tree, (array = string_split("/ mnt", ' ')), "HDD1");
-    free_str_array(array);
-    ntree_insert(&tree, (array = string_split("/ mnt HDD1", ' ')), "Desktop");
-    free_str_array(array);
-    ntree_insert(&tree, (array = string_split("/ mnt HDD1 Desktop", ' ')), "image.jpg");
-    free_str_array(array);
-    ntree_insert(&tree, (array = string_split("/ mnt", ' ')), "HDD2");
-    free_str_array(array);
-
     ntree_insert(&tree, (array = string_split("/", ',')), "home");
     free_str_array(array);
     ntree_insert(&tree, (array = string_split("/ home", ' ')), "ubuntu");
@@ -46,37 +26,18 @@ int main(void)
     free_str_array(array);
     ntree_insert(&tree, (array = string_split("/ home ubuntu", ' ')), "Public");
     free_str_array(array);
-    ntree_insert(&tree, (array = string_split("/ home ubuntu", ' ')), "Templates");
+
+    printf("Path=[%s], present:%d\n", "/ home", path_exists(tree, (array = string_split("/ home", ' '))));
     free_str_array(array);
-    ntree_insert(&tree, (array = string_split("/ home ubuntu", ' ')), "Pictures");
+    printf("Path=[%s], present:%d\n", "/ home ubuntu", path_exists(tree, (array = string_split("/ home ubuntu", ' '))));
     free_str_array(array);
-    ntree_insert(&tree, (array = string_split("/ home ubuntu", ' ')), "Videos");
+    printf("Path=[%s], present:%d\n", "/ home ubuntu Download", path_exists(tree, (array = string_split("/ home ubuntu Download", ' '))));
     free_str_array(array);
-    ntree_insert(&tree, (array = string_split("/ home ubuntu", ' ')), "Music");
+    printf("Path=[%s], present:%d\n", "/ home student", path_exists(tree, (array = string_split("/ home student", ' '))));
     free_str_array(array);
-    ntree_insert(&tree, (array = string_split("/ home ubuntu", ' ')), "Desktop");
+    printf("Path=[%s], present:%d\n", "/ home ubuntu Public file", path_exists(tree, (array = string_split("/ home ubuntu Public file", ' '))));
     free_str_array(array);
 
-    ntree_insert(&tree, (array = string_split("/", ',')), "dev");
-    free_str_array(array);
-    ntree_insert(&tree, (array = string_split("/ dev", ' ')), "urandom");
-    free_str_array(array);
-    ntree_insert(&tree, (array = string_split("/ dev", ' ')), "sda");
-    free_str_array(array);
-    ntree_insert(&tree, (array = string_split("/ dev", ' ')), "sda1");
-    free_str_array(array);
-    ntree_insert(&tree, (array = string_split("/ dev", ' ')), "sda2");
-    free_str_array(array);
-    ntree_insert(&tree, (array = string_split("/ dev", ' ')), "sdb");
-    free_str_array(array);
-    ntree_insert(&tree, (array = string_split("/ dev", ' ')), "sdb1");
-    free_str_array(array);
-    ntree_insert(&tree, (array = string_split("/ dev", ' ')), "sdb2");
-    free_str_array(array);
-    ntree_insert(&tree, (array = string_split("/ dev", ' ')), "sdb3");
-    free_str_array(array);
-
-    ntree_print(tree);
     ntree_free(tree);
     return (0);
 }
